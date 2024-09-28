@@ -331,7 +331,7 @@ cluststanDBACK$subset
 # PCA ---------------------------------------------------------------------
 library(FactoMineR)
 
-# Assicuriamoci che i tuoi dati siano in un dataframe e che le variabili siano numeriche
+# Assicuriamoci che i dati siano in un dataframe e che le variabili siano numeriche
 data_pca <- as.data.frame(data[, 3:7]) # Sostituisci con le tue colonne numeriche
 
 # Eseguo la PCA
@@ -363,7 +363,7 @@ library(FactoMineR)
 library(factoextra)
 
 
-# Supponiamo che la colonna 11 sia chiamata "Var11" nel tuo dataframe
+# Supponiamo che la colonna 11 sia chiamata "Var11" 
 datastan$cluster <- factor(datastan$cluster, levels = 1:3, labels = c("clus1", "clus2", "clus3"))
 
 
@@ -409,8 +409,6 @@ library(factoextra)
 DATREMSTAN <- subset(datastan, select = -c(1,3:10))#prendiamo vcariabili di interesse
 datres <- MCA(DATREMSTAN, quali.sup=c(5:8), method= "Burt")
 
-
-#Graphs with selection of elements
 
 #V. PRINCIPALI
 plot(datres, invisible=c("ind","quali.sup"),autoLab="y",cex=0.7,title="Active categories")
